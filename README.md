@@ -16,7 +16,9 @@
 
 ❣️声明：本仓库不提供上传项目的测试和校核服务，所有代码的效果、质量及相关事宜应均由上传人负责。
 
-# 食用说明
+by euaurora in 2022/11/15
+
+# 仓库食用说明
 
 1. Fork本仓库
 
@@ -24,8 +26,12 @@
 
 3. 创建Pull Request到本仓库的main分支
 
+# Gitpod在线IDE使用说明
 
-by euaurora in 2022/11/15
+访问域名：[https://gitpod.io/#github.com/euaurora/HappyShares-CNST-HEU](https://gitpod.io/#github.com/euaurora/HappyShares-CNST-HEU)
+
+即可通过Visual Studio Code Browser查看、编辑和执行本仓库中的所有代码。如有缺失环境请与管理员联系或提交[#issues](https://github.com/euaurora/HappyShares-CNST-HEU/issues)
+
 
 # CONTENTS
 
