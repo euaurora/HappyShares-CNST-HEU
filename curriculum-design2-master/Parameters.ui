@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Parameters</class>
+ <widget class="QDialog" name="Parameters">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>563</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>参数</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>621</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>已知条件</string>
+    </attribute>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>291</width>
+       <height>441</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <property name="horizontalSpacing">
+       <number>7</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>16</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>核电厂输出电功率(MW)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="text">
+         <string>1000</string>
+        </property>
+        <property name="placeholderText">
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>一回路能量利用率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_2">
+        <property name="text">
+         <string>99.6</string>
+        </property>
+        <property name="placeholderText">
+         <string>99.6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>蒸汽发生器出口蒸汽干度(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="text">
+         <string>99.75</string>
+        </property>
+        <property name="placeholderText">
+         <string>99.75</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>蒸汽发生器排污率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_4">
+        <property name="text">
+         <string>1.05</string>
+        </property>
+        <property name="placeholderText">
+         <string>1.05</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>高压缸内效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEdit_5">
+        <property name="text">
+         <string>82.07</string>
+        </property>
+        <property name="placeholderText">
+         <string>82.07</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>低压缸内效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="lineEdit_6">
+        <property name="text">
+         <string>83.59</string>
+        </property>
+        <property name="placeholderText">
+         <string>83.59</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>汽轮机组机械效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="lineEdit_7">
+        <property name="text">
+         <string>98.5</string>
+        </property>
+        <property name="placeholderText">
+         <string>98.5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>发电机效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLineEdit" name="lineEdit_8">
+        <property name="text">
+         <string>98.5</string>
+        </property>
+        <property name="placeholderText">
+         <string>98.5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>新蒸汽压损(%pfh)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLineEdit" name="lineEdit_9">
+        <property name="text">
+         <string>5</string>
+        </property>
+        <property name="placeholderText">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>再热蒸汽压损(%phz)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QLineEdit" name="lineEdit_10">
+        <property name="text">
+         <string>3</string>
+        </property>
+        <property name="placeholderText">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>回热抽气压损(%pej)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLineEdit" name="lineEdit_11">
+        <property name="text">
+         <string>3</string>
+        </property>
+        <property name="placeholderText">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="pushButton_nextstep">
+     <property name="geometry">
+      <rect>
+       <x>312</x>
+       <y>490</y>
+       <width>301</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>下一步</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>30</y>
+       <width>301</width>
+       <height>456</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_2">
+      <property name="verticalSpacing">
+       <number>16</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>低压缸排气压损(%pcd)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_12">
+        <property name="text">
+         <string>5</string>
+        </property>
+        <property name="placeholderText">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>流动损失(%入口压力)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_13">
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="placeholderText">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>高压给水加热器出口端差(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_14">
+        <property name="text">
+         <string>3</string>
+        </property>
+        <property name="placeholderText">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>低压给水加热器出口端差(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_15">
+        <property name="text">
+         <string>2</string>
+        </property>
+        <property name="placeholderText">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_16">
+        <property name="text">
+         <string>加热器效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEdit_16">
+        <property name="text">
+         <string>98.5</string>
+        </property>
+        <property name="placeholderText">
+         <string>98.5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_17">
+        <property name="text">
+         <string>给水泵效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="lineEdit_17">
+        <property name="text">
+         <string>58</string>
+        </property>
+        <property name="placeholderText">
+         <string>58</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_18">
+        <property name="text">
+         <string>给水泵汽轮机内效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="lineEdit_18">
+        <property name="text">
+         <string>80</string>
+        </property>
+        <property name="placeholderText">
+         <string>80</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_19">
+        <property name="text">
+         <string>给水泵汽轮机机械效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLineEdit" name="lineEdit_19">
+        <property name="text">
+         <string>90</string>
+        </property>
+        <property name="placeholderText">
+         <string>90</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>给水泵汽轮机减速器效率(%)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLineEdit" name="lineEdit_20">
+        <property name="text">
+         <string>98</string>
+        </property>
+        <property name="placeholderText">
+         <string>98</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="label_32">
+        <property name="text">
+         <string>假定电厂效率</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_36">
+        <property name="text">
+         <string>假定冷凝器凝水量</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QLineEdit" name="lineEdit_21">
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLineEdit" name="lineEdit_32">
+        <property name="text">
+         <string>1200</string>
+        </property>
+        <property name="placeholderText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="label_37">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+     <property name="text">
+      <string>*请按照实际数据修改！</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>给定热力参数</string>
+    </attribute>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>541</width>
+       <height>460</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_3">
+      <property name="horizontalSpacing">
+       <number>50</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>7</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_22">
+        <property name="text">
+         <string>反应堆冷却剂系统运行压力(MPa)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_22">
+        <property name="placeholderText">
+         <string>15~16</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_23">
+        <property name="text">
+         <string>反应堆出口冷却剂过冷度(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="lineEdit_23">
+        <property name="placeholderText">
+         <string>15~20</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_24">
+        <property name="text">
+         <string>反应堆进出口冷却剂温升(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="lineEdit_24">
+        <property name="placeholderText">
+         <string>30~40</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_25">
+        <property name="text">
+         <string>蒸汽发生器饱和蒸汽压力(MPa)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="lineEdit_25">
+        <property name="placeholderText">
+         <string>5.0~7.0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_26">
+        <property name="text">
+         <string>冷凝器中循环冷却水温升(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="lineEdit_26">
+        <property name="placeholderText">
+         <string>6~12</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_27">
+        <property name="text">
+         <string>冷凝器传热端差(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="lineEdit_27">
+        <property name="placeholderText">
+         <string>3~10</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QLabel" name="label_29">
+        <property name="text">
+         <string>高压缸排气压力(%高压缸进口压力)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QLineEdit" name="lineEdit_29">
+        <property name="placeholderText">
+         <string>12~14</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_30">
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;第二级再热蒸汽出口温度与新蒸汽之差(℃)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLineEdit" name="lineEdit_30">
+        <property name="placeholderText">
+         <string>13~15</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0">
+       <widget class="QLabel" name="label_31">
+        <property name="text">
+         <string>回热级数</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QLineEdit" name="lineEdit_31">
+        <property name="placeholderText">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_33">
+        <property name="text">
+         <string>低压给水加热器级数</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLineEdit" name="lineEdit_33">
+        <property name="placeholderText">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="label_34">
+        <property name="text">
+         <string>高压给水加热器级数</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QLineEdit" name="lineEdit_34">
+        <property name="placeholderText">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>实际给水温度(%最佳给水温度)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="1">
+       <widget class="QLineEdit" name="lineEdit_35">
+        <property name="placeholderText">
+         <string>85~90</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLineEdit" name="lineEdit_28">
+        <property name="placeholderText">
+         <string>环境而定</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QLabel" name="label_28">
+        <property name="text">
+         <string>循环冷却水温度(℃)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0">
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>给水泵出口压力(x倍GS二次侧蒸汽压力,MPa)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="0">
+       <widget class="QLabel" name="label_39">
+        <property name="text">
+         <string>凝水泵出口压力(x倍除氧器运行压力,MPa)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="1">
+       <widget class="QLineEdit" name="lineEdit_37">
+        <property name="placeholderText">
+         <string>1.15~1.25</string>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="1">
+       <widget class="QLineEdit" name="lineEdit_38">
+        <property name="placeholderText">
+         <string>3~3.2</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>490</y>
+       <width>301</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>保存</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_38">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+     <property name="text">
+      <string>*请按照实际数据修改！</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
