@@ -1,24 +1,22 @@
 大作业内容见PDF，BIGHOMEWORK数字编号对应不同题目。COMSOL文件可以进行验证，其它细节如下文所述。
 
-[TOC]
+
 
 # 一、问题描述
 
 ## 1、题目描述
 
-如图所示，一个无限长矩形柱体，其横截面的边长分别为 *L*1 和 *L*2，常物性。该问题可视为二维稳态导热问题，边界条件如图中所示，其中$L_1=0.6m$，$L_2=0.4m$，$T_{w1}=60^{\circ}C$，$T_{w2}=20^{\circ}C$，$\lambda=200W/(m·K)$
-
-<img src="/Users/dmcxe/Downloads/温度条件.png" alt="温度条件" style="zoom:67%;" />
+如图所示，一个无限长矩形柱体，其横截面的边长分别为 *L*1 和 *L*2，常物性。该问题可视为二维稳态导热问题，边界条件如图中所示，其中 $L_1=0.6m$ ， $L_2=0.4m$ ， $T_{w1}=60^{\circ}C$ ，$T_{w2}=20^{\circ}C$ ，$\lambda=200W/(m·K)$
 
 第一问：
 
 (1)编写程序求解二维导热方程。
 
-(2)绘制$x=L_1/2$和$y=L_2/2$处的温度场，并与解析解进行比较。已知矩形内的温度场的解析解为$t(x,y)=t_{w1}+t_{w2}\sin(\pi x/L_1)\frac{\sinh(\pi y/L_1)}{\sinh(\pi L_2/L_1)}$
+(2)绘制 $x=L_1/2$ 和 $y=L_2/2$ 处的温度场，并与解析解进行比较。已知矩形内的温度场的解析解为 $t(x,y)=t_{w1}+t_{w2}\sin(\pi x/L_1)\frac{\sinh(\pi y/L_1)}{\sinh(\pi L_2/L_1)}$ 
 
-第二问：将第一题中$y=L_2$处的边界条件变为$t=t_{w2}$，其它条件不变。
+第二问：将第一题中 $y=L_2$ 处的边界条件变为 $t=t_{w2}$ ，其它条件不变。
 
-(1)编写程序求解二维导热方程并计算从$y=0$处导入的热量$\Phi_2$
+(1)编写程序求解二维导热方程并计算从 $y=0$ 处导入的热量 $\Phi_2$
 
 (2)当$L_2\ll L_1$时，改二维导热问题可简化为一维导热问题。在一维近似下，试计算从$y=0$处倒入的热量$\Phi_1$，并比较不同$L_2/L_1$下$\Phi_2/\Phi_1$的比值。由该问题的解析解可知：
 
@@ -48,68 +46,68 @@
 
 ### （1）泰勒级数展开法
 
-对节点$(m+1,n)$及$(m-1,n)$分别写出函数$t$对$(m,n)$点的泰勒级数展开式：
+对节点 $(m+1,n)$ 及 $(m-1,n)$ 分别写出函数 $t$ 对 $(m,n)$ 点的泰勒级数展开式：
 
-$\begin{aligned}t_{m+1, n}=t_{m, n}+\left.\Delta x \frac{\partial t}{\partial x}\right|_{m, n}+\left.\frac{\Delta x^{2}}{2} \frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}+\left.\frac{\Delta x^{3}}{6} \frac{\partial^{3} t}{\partial x^{3}}\right|_{m, n}+\left.\frac{\Delta x^{4}}{24} \frac{\partial^{4} t}{\partial x^{4}}\right|_{m, n}+\cdots\end{aligned}$
-$\begin{aligned}t_{m-1, n}=t_{m, n}-\left.\Delta x \frac{\partial t}{\partial x}\right|_{m, n}+\left.\frac{\Delta x^{2}}{2} \frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}-\left.\frac{\Delta x^{3}}{6} \frac{\partial^{3} t}{\partial x^{3}}\right|_{m, n}+\left.\frac{\Delta x^{4}}{24} \frac{\partial^{4} t}{\partial x^{4}}\right|_{m, n}+\cdots\end{aligned}$
+$$\begin{aligned}t_{m+1, n}=t_{m, n}+\left.\Delta x \frac{\partial t}{\partial x}\right|_{m, n}+\left.\frac{\Delta x^{2}}{2} \frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}+\left.\frac{\Delta x^{3}}{6} \frac{\partial^{3} t}{\partial x^{3}}\right|_{m, n}+\left.\frac{\Delta x^{4}}{24} \frac{\partial^{4} t}{\partial x^{4}}\right|_{m, n}+\cdots\end{aligned}$$
+$$\begin{aligned}t_{m-1, n}=t_{m, n}-\left.\Delta x \frac{\partial t}{\partial x}\right|_{m, n}+\left.\frac{\Delta x^{2}}{2} \frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}-\left.\frac{\Delta x^{3}}{6} \frac{\partial^{3} t}{\partial x^{3}}\right|_{m, n}+\left.\frac{\Delta x^{4}}{24} \frac{\partial^{4} t}{\partial x^{4}}\right|_{m, n}+\cdots\end{aligned}$$
 
 两式相加可得：
 
-$\begin{aligned}t_{m+1, n}+t_{m-1, n}=2t_{m,n}+\left.\Delta x^{2} \frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}+\left.\frac{\Delta x^{4}}{12} \frac{\partial^{4} t}{\partial x^{4}}\right|_{m, n}+\cdots\end{aligned}$
+$$\begin{aligned}t_{m+1, n}+t_{m-1, n}=2t_{m,n}+\left.\Delta x^{2} \frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}+\left.\frac{\Delta x^{4}}{12} \frac{\partial^{4} t}{\partial x^{4}}\right|_{m, n}+\cdots\end{aligned}$$
 
-改写为$\left.\frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}$的表达式，有：
+改写为 $\left.\frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}$ 的表达式，有：
 
-$\begin{aligned}\left.\frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}=\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}+O\left(\Delta x^{2}\right)\end{aligned}$
+$$\begin{aligned}\left.\frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}=\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}+O\left(\Delta x^{2}\right)\end{aligned}$$
 
-略去阶段误差$O\left(\Delta x^{2}\right)$可以的得到中心差分表达式：
+略去阶段误差 $O\left(\Delta x^{2}\right)$ 可以的得到中心差分表达式：
 
-$\begin{aligned}\left.\frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}=\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}\end{aligned}$
+$$\begin{aligned}\left.\frac{\partial^{2} t}{\partial x^{2}}\right|_{m, n}=\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}\end{aligned}$$
 
 同理可以得到：
 
-$\begin{aligned}\left.\frac{\partial^{2} t}{\partial y^{2}}\right|_{m, n}=\frac{t_{m, n+1}-2 t_{m, n}+t_{m, n-1}}{\Delta y^{2}}\end{aligned}$
+$$\begin{aligned}\left.\frac{\partial^{2} t}{\partial y^{2}}\right|_{m, n}=\frac{t_{m, n+1}-2 t_{m, n}+t_{m, n-1}}{\Delta y^{2}}\end{aligned}$$
 
 可以的到最终的离散表达式：
 
-$\begin{aligned}\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}+\frac{t_{m, n+1}-2 t_{m, n}+t_{m, n-1}}{\Delta y^{2}}=0\end{aligned}$
+$$\begin{aligned}\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}+\frac{t_{m, n+1}-2 t_{m, n}+t_{m, n-1}}{\Delta y^{2}}=0\end{aligned}$$
 
 ### （2）热平衡法
 
-从节点$(m-1,n)$通过界面$w$传导到节点$(m,n)$的热流量可表示为：
+从节点 $(m-1,n)$ 通过界面 $w$ 传导到节点 $(m,n)$ 的热流量可表示为：
 
-$\begin{aligned}\Phi_{w}=\lambda \Delta y \frac{t_{m-1, n}-t_{m, n}}{\Delta x}\end{aligned}$
+$$\begin{aligned}\Phi_{w}=\lambda \Delta y \frac{t_{m-1, n}-t_{m, n}}{\Delta x}\end{aligned}$$
 
-其他三个界面$e$、$n$、$s$的也可以通过同样的方式给出，又由于元体$(m,n)$的热量符合能量守恒方程：
+其他三个界面 $e$ 、 $n$ 、 $s$ 的也可以通过同样的方式给出，又由于元体 $(m,n)$ 的热量符合能量守恒方程：
 
-$\begin{aligned}\Phi_{e}+\Phi_{w}+\Phi_{n}+\Phi_{s}=0\end{aligned}$
+$$\begin{aligned}\Phi_{e}+\Phi_{w}+\Phi_{n}+\Phi_{s}=0\end{aligned}$$
 
 将上述表达式代入得：
 
-$\begin{aligned}\lambda \frac{t_{m-1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m+1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m, n+1}-t_{m, n}}{\Delta y} \Delta x+\lambda \frac{t_{m, n-1}-t_{m, n}}{\Delta y} \Delta x=0\end{aligned}$
+$$\begin{aligned}\lambda \frac{t_{m-1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m+1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m, n+1}-t_{m, n}}{\Delta y} \Delta x+\lambda \frac{t_{m, n-1}-t_{m, n}}{\Delta y} \Delta x=0\end{aligned}$$
 
-若我们取$\Delta x=\Delta y$，则热平衡法与泰勒展开法表达形式一致。同时，由于第一类边界条件的导热问题所有内节点的离散方程组成了一个封闭的代数方程组可以立即求解，不需要对边界进行其它的处理。
+若我们取 $\Delta x=\Delta y$ ，则热平衡法与泰勒展开法表达形式一致。同时，由于第一类边界条件的导热问题所有内节点的离散方程组成了一个封闭的代数方程组可以立即求解，不需要对边界进行其它的处理。
 
 ## 2、Gauss-Seidel迭代法
 
 设有一个三元方程组，记为：
 
-$\begin{aligned}\left\{\begin{array}{l}a_{11} t_{1}+a_{12} t_{2}+a_{13} t_{3}=b_{1} \\ a_{21} t_{1}+a_{22} t_{2}+a_{23} t_{3}=b_{2} \\ a_{31} t_{1}+a_{32} t_{2}+a_{33} t_{3}=b_{3}\end{array}\right.\end{aligned}$
+$$\begin{aligned}\left\{\begin{array}{l}a_{11} t_{1}+a_{12} t_{2}+a_{13} t_{3}=b_{1} \\ a_{21} t_{1}+a_{22} t_{2}+a_{23} t_{3}=b_{2} \\ a_{31} t_{1}+a_{32} t_{2}+a_{33} t_{3}=b_{3}\end{array}\right.\end{aligned}$$
 
 采用高斯-赛德尔迭代法求解的步骤如下：
 
-（1）将方程组改写成关于$t_1、t_2、t_3$的显式形式（迭代方程）：
+（1）将方程组改写成关于 $t_1、t_2、t_3$ 的显式形式（迭代方程）：
 
-$\begin{aligned}\left\{\begin{array}{l}t_{1}=\frac{1}{a_{11}}\left(b_{1}-a_{12} t_{2}-a_{13} t_{3}\right) \\ t_{2}=\frac{1}{a_{22}}\left(b_{2}-a_{21} t_{1}-a_{23} t_{3}\right) \\ t_{3}=\frac{1}{a_{33}}\left(b_{3}-a_{31} t_{1}-a_{32} t_{2}\right)\end{array}\right.\end{aligned}$
+$$\begin{aligned}\left\{\begin{array}{l}t_{1}=\frac{1}{a_{11}}\left(b_{1}-a_{12} t_{2}-a_{13} t_{3}\right) \\ t_{2}=\frac{1}{a_{22}}\left(b_{2}-a_{21} t_{1}-a_{23} t_{3}\right) \\ t_{3}=\frac{1}{a_{33}}\left(b_{3}-a_{31} t_{1}-a_{32} t_{2}\right)\end{array}\right.\end{aligned}$$
 
 （2）假设一组解（即迭代初场），通过上式逐一计算出改进值。每次计算均用最新的计算代入。
 
 （3）以计算所得到的值作为初场，重复上述计算直到相邻两次迭代值之差小于允许值。此时称为已达到迭代收敛。迭代计算终止。通常由三种常用判据进行收敛判断：
 
-$\begin{aligned}\max \left|t_{i}^{(k)}-t_{i}^{(k+1)}\right| \leqslant \varepsilon\end{aligned}$
-$\begin{aligned}\max \left|\frac{t_{i}^{(k)}-t_{i}^{(k+1)}}{t_{i}^{(k)}}\right| \leqslant \varepsilon\end{aligned}$
-$\begin{aligned}\max \left|\frac{t_{i}^{(k)}-t_{i}^{(k+1)}}{t_{\max }^{(k)}}\right| \leqslant \varepsilon\end{aligned}$
+$$\begin{aligned}\max \left|t_{i}^{(k)}-t_{i}^{(k+1)}\right| \leqslant \varepsilon\end{aligned}$$
+$$\begin{aligned}\max \left|\frac{t_{i}^{(k)}-t_{i}^{(k+1)}}{t_{i}^{(k)}}\right| \leqslant \varepsilon\end{aligned}$$
+$$\begin{aligned}\max \left|\frac{t_{i}^{(k)}-t_{i}^{(k+1)}}{t_{\max }^{(k)}}\right| \leqslant \varepsilon\end{aligned}$$
 
-通过热平衡法导出差分方程时，若每一个方程都选用该方程的中心节点温度作为迭代变量则一定满足对角占优$(\text{diagonal predominant)}$，迭代一定收敛。
+通过热平衡法导出差分方程时，若每一个方程都选用该方程的中心节点温度作为迭代变量则一定满足对角占优 $(\text{diagonal predominant)}$ ，迭代一定收敛。
 
 
 
@@ -117,29 +115,29 @@ $\begin{aligned}\max \left|\frac{t_{i}^{(k)}-t_{i}^{(k+1)}}{t_{\max }^{(k)}}\rig
 
 ## 1.网格的划分与建立
 
-通过给出的完整模型，可以得到适用于本题条件的网格建立方法。首先需要设定本题要求的几何尺寸$L_1$,$L_2$，再确定对于横、纵方向上需要划分的点的数量。最后通过几何尺寸与点尺寸的比值确定$\Delta x$、$\Delta y$的值。例如对于$L_1=0.6$,$L_2=0.4$的矩形平面，设定长方向分割数量为50，纵方向分割数量为50。这样构建出$50\times 50 $的网格平面，对应的$\Delta x=\frac{0.6}{50}$、$\Delta y=\frac{0.4}{50}$。如此这般并可以完成网格的划分与建立。
+通过给出的完整模型，可以得到适用于本题条件的网格建立方法。首先需要设定本题要求的几何尺寸$L_1$,$L_2$，再确定对于横、纵方向上需要划分的点的数量。最后通过几何尺寸与点尺寸的比值确定 $\Delta x$  、 $\Delta y$ 的值。例如对于 $L_1=0.6$ , $L_2=0.4$ 的矩形平面，设定长方向分割数量为50，纵方向分割数量为50。这样构建出$50\times 50 $的网格平面，对应的 $\Delta x=\frac{0.6}{50}$  、 $\Delta y=\frac{0.4}{50}$ 。如此这般并可以完成网格的划分与建立。
 
 ## 2.方程的离散
 
-依据之前提及的方程离散方法，通过定义$\begin{aligned}k=\frac{\Delta y}{\Delta x}\end{aligned}$，进一步简化
+依据之前提及的方程离散方法，通过定义 $\begin{aligned}k=\frac{\Delta y}{\Delta x}\end{aligned}$ ，进一步简化
 
-$\begin{aligned}\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}+\frac{t_{m, n+1}-2 t_{m, n}+t_{m, n-1}}{\Delta y^{2}}=0\end{aligned}$
+$$\begin{aligned}\frac{t_{m+1, n}-2 t_{m, n}+t_{m-1, n}}{\Delta x^{2}}+\frac{t_{m, n+1}-2 t_{m, n}+t_{m, n-1}}{\Delta y^{2}}=0\end{aligned}$$
 
 或
 
-$\begin{aligned}\lambda \frac{t_{m-1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m+1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m, n+1}-t_{m, n}}{\Delta y} \Delta x+\lambda \frac{t_{m, n-1}-t_{m, n}}{\Delta y} \Delta x=0\end{aligned}$
+$$\begin{aligned}\lambda \frac{t_{m-1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m+1, n}-t_{m, n}}{\Delta x} \Delta y+\lambda \frac{t_{m, n+1}-t_{m, n}}{\Delta y} \Delta x+\lambda \frac{t_{m, n-1}-t_{m, n}}{\Delta y} \Delta x=0\end{aligned}$$
 
 可以得到适用于高斯-赛德尔迭代法的简化离散化表达形式：
 
-$\begin{aligned}t_{m,n}=\frac{k^2t_{m-1,n}+k^2t_{m+1,n}+t_{m,n+1}+t_{m,n-1}}{2k^2+2}\end{aligned}$
+$$\begin{aligned}t_{m,n}=\frac{k^2t_{m-1,n}+k^2t_{m+1,n}+t_{m,n+1}+t_{m,n-1}}{2k^2+2}\end{aligned}$$
 
 在第二问中还需要对导入的热量进行求解，热量满足表达式：
 
-$\begin{aligned}\Phi=\lambda \Delta y \frac{t_{m-1, n}-t_{m, n}}{\Delta x}=\lambda k(t_{m-1,n}-t_{m,n})\end{aligned}$
+$$\begin{aligned}\Phi=\lambda \Delta y \frac{t_{m-1, n}-t_{m, n}}{\Delta x}=\lambda k(t_{m-1,n}-t_{m,n})\end{aligned}$$
 
-则在$y=0$处导入的热量为：
+则在 $y=0$ 处导入的热量为：
 
-$\begin{aligned}\Phi=\lambda \Delta y \frac{t_{m, n-1}-t_{m, n}}{\Delta x}=\lambda k(t_{m,n-1}-t_{m,n})\end{aligned}$
+$$\begin{aligned}\Phi=\lambda \Delta y \frac{t_{m, n-1}-t_{m, n}}{\Delta x}=\lambda k(t_{m,n-1}-t_{m,n})\end{aligned}$$
 
 即只考虑沿一个方向的延伸。
 
@@ -149,7 +147,7 @@ $\begin{aligned}\Phi=\lambda \Delta y \frac{t_{m, n-1}-t_{m, n}}{\Delta x}=\lamb
 
 ### 1、核心流程图
 
-![未命名文件-3](/Users/dmcxe/Downloads/平板传热的迭代法 -by DMCXE/未命名文件夹/pic/未命名文件-3.png)
+![未命名文件-3](.../平板传热的迭代法 -by DMCXE/未命名文件夹/pic/未命名文件-3.png)
 
 ### 2、模型框架展示
 
@@ -315,11 +313,11 @@ $y=L2/2$处的解析解与数值解比较如下图所示：
 
 第一小问可以得到如下图所示的温度场：
 
-![Figure_120](/Users/dmcxe/Downloads/平板传热的迭代法 -by DMCXE/未命名文件夹/pic/Figure_120.png)
+![Figure_120](/平板传热的迭代法 -by DMCXE/未命名文件夹/pic/Figure_120.png)
 
 与Comsol绘制的图片相比较（开尔文表示）：
 
-![Figure_221](/Users/dmcxe/Downloads/平板传热的迭代法 -by DMCXE/未命名文件夹/pic/Figure_221.png)
+![Figure_221](HappyShares-CNST-HEU/传热学/平板传热的迭代法 -by DMCXE/未命名文件夹/pic/Figure_221.png)
 
 具备较好的相似程度，此时：$\Phi = 5217.4585W$
 
