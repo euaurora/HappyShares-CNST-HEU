@@ -24,7 +24,7 @@ by euaurora in 2022/11/15
 
 2. 在个人仓库中新建or上传项目文件or文件夹（建议大家在文件夹名中标注作者）
 
-3. 创建Pull Request到本仓库的main分支
+3. 创建[#Pull Request](https://github.com/euaurora/HappyShares-CNST-HEU/pulls)到本仓库的`main`分支
 
 # Gitpod在线IDE使用说明
 
