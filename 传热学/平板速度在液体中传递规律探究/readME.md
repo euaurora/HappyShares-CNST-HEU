@@ -98,6 +98,9 @@ for t in range(1, 300):
   plt.cla()
   vx.clear()
 ```
-![图片1](https://user-images.githubusercontent.com/27603359/202140627-17023b31-8915-4cf4-bd69-53928c9718c8.gif)
 
+![image](https://user-images.githubusercontent.com/27603359/202141741-6b584ed2-dfc1-4128-af82-adb9b632c181.png)
 
+由上图可以清楚看到平板速度的传递随着深度的增加而变得愈发困难，符合实际情况。可以预见的是，当时间趋近于无穷大时，液体的速度分布为一直线，能够影响的深度也有限。
+
+结论：当液体粘度为0.000001 m^2⁄s时，数值较小，平板速度的传递性较差。
