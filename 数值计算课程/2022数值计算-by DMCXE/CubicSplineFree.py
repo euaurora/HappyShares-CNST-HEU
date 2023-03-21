@@ -4,7 +4,7 @@ class CubicSplineFree:
     def __init__(self,arr1):
         self.arr1 = arr1
         self.arr1_x = arr1[:,0]
-        self.arr1_y = arr1[:,1]
+        self.arr1_y = arr1[:,1]/10 #为了修复<1时退化为线性插值的现象
         self.lenth = len(arr1)
     #hn为x之间的间隔
     def hn(self):
@@ -95,7 +95,7 @@ class CubicSplineFree:
             + M[j+1]*((x-self.arr1_x[j])**3)/(6*h[j]) \
             + (self.arr1_y[j]-(M[j]*(h[j]**2))/6)*(self.arr1_x[j+1]-x)/h[j] \
             + (self.arr1_y[j+1]-M[j+1]*h[j]**2/6)*(x-self.arr1_x[j])/h[j]
-        return S
+        return S/10
 
     def visualize(self,start,end,step,text):
         x = np.linspace(start,end,step)
@@ -104,10 +104,10 @@ class CubicSplineFree:
             y = np.append(y,self.num(i))
         y = y[1:]
         plt.figure()
-        plt.scatter(self.arr1_x, self.arr1_y, c='red')
+        plt.scatter(self.arr1_x, self.arr1_y/10, c='red')
         if text is True:
             for j in range(0,self.lenth):
-                plt.text(self.arr1_x[j],self.arr1_y[j],(self.arr1_x[j],self.arr1_y[j]))
+                plt.text(self.arr1_x[j],self.arr1_y[j]/10,(self.arr1_x[j],self.arr1_y[j]/10))
         plt.plot(x,y)
         plt.show()
 
