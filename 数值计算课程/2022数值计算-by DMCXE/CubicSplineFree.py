@@ -4,7 +4,7 @@ class CubicSplineFree:
     def __init__(self,arr1):
         self.arr1 = arr1
         self.arr1_x = arr1[:,0]
-        self.arr1_y = arr1[:,1]/10 #为了修复<1时退化为线性插值的现象
+        self.arr1_y = arr1[:,1]/10 #为了修复<1时退化为线性插值的现象,在visualize中需要归还
         self.lenth = len(arr1)
     #hn为x之间的间隔
     def hn(self):
