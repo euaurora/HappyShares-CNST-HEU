@@ -49,7 +49,12 @@ by euaurora in 2022/11/15
  
 数值计算
   - 2022数值计算课程大作业-by DMCXE
+  - 2023数值计算课程大作业-by DMCXE
+  - roundingError.pdf-by euaurora
 
 公共选修课
   - 网络空间信息安全
     — 网络安全审计系统 -by DMCXE
+    
+Iterative Methods for Sparse Linear Systems
+  - CMK.pdf -by euaurora
